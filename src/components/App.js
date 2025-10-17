@@ -17,12 +17,14 @@ const App = () => {
   }, [text])
   return (
     <div>
-        <input onChange={(e) => {
+        <input value={text} onChange={(e) => {
           setText(e.target.value)
         }}/>
         <ul>
           {xyz.map((item) => {
-            return <li>{item}</li>
+            return <li onClick={() => {
+              setText(item)
+            }}>{item}</li>
           })}
         </ul>
     </div>
